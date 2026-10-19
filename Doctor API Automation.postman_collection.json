@@ -1,0 +1,275 @@
+{
+  "info": {
+    "_postman_id": "8a32b54d-d567-4bdd-ada2-374be09fb379",
+    "name": "Doctor API Automation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58421830",
+    "_collection_link": "https://go.postman.co/collection/58421830-8a32b54d-d567-4bdd-ada2-374be09fb379?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Doctor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/doctors",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Doctor By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/doctors/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Doctor By Spesialis",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/doctors?spesialis=anak",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors"
+          ],
+          "query": [
+            {
+              "key": "spesialis",
+              "value": "anak"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Doctor",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"dr. Rizky Apryandi\",\r\n  \"spesialis\": \"Anak\",\r\n  \"noStr\": \"STR-2026-003\",\r\n  \"jadwalPraktik\": \"Senin-Jumat, 09.00-12.00\",\r\n  \"biayaKonsultasi\": 175000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/doctors",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Doctor",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"dr. Rizky Apryandi\",\r\n  \"spesialis\": \"Anak\",\r\n  \"noStr\": \"STR-2026-003\",\r\n  \"jadwalPraktik\": \"Senin-Jumat, 13.00-16.00\",\r\n  \"biayaKonsultasi\": 200000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/doctors/{{doctorId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors",
+            "{{doctorId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Doctor",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/doctors/{{doctorId}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors",
+            "{{doctorId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Doctor Without API Key",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"dr. Rizky Apryandi\",\r\n  \"spesialis\": \"Anak\",\r\n  \"noStr\": \"STR-2026-003\",\r\n  \"jadwalPraktik\": \"Senin-Jumat, 09.00-12.00\",\r\n  \"biayaKonsultasi\": 175000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/doctors",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Doctor With Invalid Body",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "{{api_key}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nama\": \"dr. Dokter Uji\",\r\n  \"spesialis\": \"Anak\",\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/doctors",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Doctor With Invalid ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/doctors/999",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "doctors",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          "pm.test(\"Status code harus 200\", function () {\r",
+          "    pm.response.to.have.status(200);\r",
+          "});\r",
+          "\r",
+          "pm.test(\"Respons berupa array dokter\", function () {\r",
+          "    const data = pm.response.json();\r",
+          "\r",
+          "    pm.expect(data).to.be.an(\"array\");\r",
+          "\r",
+          "    if (data.length > 0) {\r",
+          "        pm.expect(data[0]).to.have.property(\"id\");\r",
+          "        pm.expect(data[0]).to.have.property(\"nama\");\r",
+          "        pm.expect(data[0]).to.have.property(\"spesialis\");\r",
+          "        pm.expect(data[0]).to.have.property(\"noStr\");\r",
+          "        pm.expect(data[0]).to.have.property(\"jadwalPraktik\");\r",
+          "        pm.expect(data[0]).to.have.property(\"biayaKonsultasi\");\r",
+          "    }\r",
+          "});"
+        ],
+        "type": "text/javascript"
+      }
+    }
+  ]
+}
